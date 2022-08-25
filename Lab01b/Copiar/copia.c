@@ -14,8 +14,19 @@ int main(int argc, char *argv[])
   char *caminho_destino = argv[2];
 
   FILE *arquivo_inicial = fopen(caminho_inicial, "r");
+  if (arquivo_inicial == NULL)
+  {
+    printf("Erro tentando abrir o arquivo inicial");
+    exit(1);
+  }
+    
   FILE *arquivo_final = fopen(caminho_destino, "w+");
-
+  if (arquivo_inicial == NULL)
+  {
+    printf("Erro tentando abrir o arquivo final");
+    exit(1);
+  }
+  
   char caractere = fgetc(arquivo_inicial);
   while (caractere != EOF) 
   {
