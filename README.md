@@ -1,7 +1,10 @@
 # Lab1
 
 Caio Cezar Oliveira Filardi do Carmo - TIA: 31891365
+
 Mayara Meneghetti - TIA: 32152280
+
+Fabio Domingues Pereira Sabino - TIA: 32154429
 
 -----------------------------------------------------------------------------------------------
 Ex 1 (1a): O comando cat é usado no sistema operacional Linux para exibir o conteúdo de um arquivo na tela do computador. Escreva um programa (na linguagem C) faça exatamente o que o cat faz, o programa deverá ler um arquivo texto (entrada) informado por linha de comando no interpretador de comando (Como se faz isso ?) e depois imprimir o conteúdo do arquivo na tela. Faça todos os testes necessários para abertura, leitura e ao final não se esqueça de fechar o arquivo.
