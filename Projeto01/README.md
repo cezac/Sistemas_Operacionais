@@ -23,11 +23,11 @@ Página 99 até 102 solução para o problema dos filósofos.
 
 Ao implementar uma solução onde o filósofo pega um garfo e aguarda até o próximo garfo estar disponível NÂO FUNCIONA. Se todos os filosófos resolverem pegar os garfos simultanemante o programa terá um deadlock, onde nenhum deles terá dois garfos e nenhum irá libera um garfo para o próximo, o problema apresenta condições de impasses:
 
-POSSE E ESPERA
-  Filosófo toma o garfo da esquera e fica aguardando o da direita;
-ESPERA CIRCULAR
+POSSE E ESPERA:
+  Filosófo toma o garfo da esquerda e fica aguardando o da direita;
+ESPERA CIRCULAR:
   Cadeia circular de filosófos aguardando simultanemante um garfo;
-NÃO PREEMPÇÃO
+NÃO PREEMPÇÃO:
   Filósofo não pode tomar um garfo do outro;
 
 CONTÉUDO DO VIDEO: https://www.youtube.com/watch?v=LhkDV3cECNY
