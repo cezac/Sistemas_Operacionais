@@ -9,7 +9,7 @@ Quando conseguir pegar os dois garfos o filósofo come e logo depois devolve amb
 Levando em consideração o problema computacional proposto, responda á seguinte questão:
 
 Implemente uma possível solução para o problema do jantar dos filósofos?
-Explique, em cada trecho do seu programa, como é resolvido o problema da comunicação inter processos (IPC)?### Compilar usando o comando
+Explique, em cada trecho do seu programa, como é resolvido o problema da comunicação inter processos (IPC)?
 
 ######################--------------------------------######################
 
