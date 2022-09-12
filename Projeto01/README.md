@@ -11,7 +11,7 @@ Levando em consideração o problema computacional proposto, responda á seguint
 Implemente uma possível solução para o problema do jantar dos filósofos?
 Explique, em cada trecho do seu programa, como é resolvido o problema da comunicação inter processos (IPC)?### Compilar usando o comando
 
-###############################################-------------------------------------------------------------#####################################################
+###############################################----------------------------------------------#####################################################
 
 MATERIAL DE ESTUDO UTILIZADO PARA RESOLUÇÃO
 
@@ -19,7 +19,7 @@ Livro "Sistema Operacionais Modernos" 3°Edição:
 Página 50, capítulo de thread;
 Página 99 até 102 solução para o problema dos filósofos.
 
-###############################################-------------------------------------------------------------#####################################################
+###############################################----------------------------------------------#####################################################
 
 Ao implementar uma solução onde o filósofo pega um garfo e aguarda até o próximo garfo estar disponível NÂO FUNCIONA. Se todos os filosófos resolverem pegar os garfos simultanemante o programa terá um deadlock, onde nenhum deles terá dois garfos e nenhum irá libera um garfo para o próximo, o problema apresenta condições de impasses:
 
@@ -39,7 +39,7 @@ Existe a possibilidade do programa não cair nesta situação, mas para a soluç
 Está solução funciona sem erros, mas ainda não é a versão mais otimizada, pois implementando desta com forma, com a utilização de um semáforo binário, somente um filosófo poderá comer por vez.
 A versão mais otimizada possível é utilizando um arranjo de semafóros, onde controlamos o estado de cada filosófo de forma idenpendente, só o liberando para comer caso seus vizinhos estejam pensando(), sem garfos adjacentes ocupados.
 
-###############################################-------------------------------------------------------------#####################################################
+###############################################----------------------------------------------#####################################################
 
 COMPILAR UTILIZANDO:
 g++ -std=c++11 -pthread nome.cpp -o nome
