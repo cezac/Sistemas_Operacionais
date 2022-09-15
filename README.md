@@ -1,4 +1,4 @@
-# Primeiro parte do semeste, entregas de atividades e projeto
+# Sistemas Operacionais - Diretório para entrega de atividades
 
 
 GRUPO DE PROJETOS PARA AS AULAS DE SISTEMAS OPERACIONAIS
