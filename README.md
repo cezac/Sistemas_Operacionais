@@ -1,4 +1,4 @@
-# Lab1
+# Primeiro parte do semeste, entregas de atividade e projetos
 
 4N / 4N11 - SALA
 
