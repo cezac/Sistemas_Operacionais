@@ -8,10 +8,10 @@ COMPILAR NORMAL, SEM NECESSIDADE DE ARGUMENTOS EXTERNOS
 
 ----------------------------------------------------------
 
-jantar4.cpp  - VERSÃO DO CÓDIGO EM C++, UTILIZANDO THREAD E MUTEX
+jantar_dos_filosofos_final.cpp  - VERSÃO DO CÓDIGO EM C++, UTILIZANDO THREAD E MUTEX
 
-COMPILAR UTILIZANDO:
-g++ -std=c++11 -pthread nome.cpp -o nome
+COMPILAR UTILIZANDO COMPILADOR G++ E EXECUTAR O SEGUINTE COMANDO NO TERMINAL:
+g++ -std=c++11 -pthread jantar_dos_filosofos_final.cpp
 
 ----------------------------------------------------------
 
@@ -46,6 +46,13 @@ Página 99 até 102 solução para o problema dos filósofos.
 http://www.di.ubi.pt/~operativos/praticos/html/13-sinc.html
 
 Material de apoio para entedimento das bibliotecas de semaphore e mutex.
+
+https://cplusplus.com/reference/thread/thread/
+https://cplusplus.com/reference/mutex/mutex/unlock/
+https://cplusplus.com/reference/mutex/lock/
+https://en.cppreference.com/w/cpp/thread/thread
+https://www.geeksforgeeks.org/multithreading-in-cpp/
+https://www.cs.cmu.edu/afs/cs/academic/class/15492-f07/www/pthreads.html
 
 ----------------------------------------------------------
 
