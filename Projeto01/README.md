@@ -1,3 +1,24 @@
+----------------------------------------------------------
+
+Códigos finalizados:
+
+Filosofos2.c - VERSÃO DO CÓDIGO EM C, UTLIZANDO MULTITHREAD, SEMAPHORE E MUTEX
+
+COMPILAR NORMAL, SEM NECESSIDADE DE ARGUMENTOS EXTERNOS
+
+----------------------------------------------------------
+
+jantar4.cpp  - VERSÃO DO CÓDIGO EM C++, UTILIZANDO THREAD E MUTEX
+
+COMPILAR UTILIZANDO:
+g++ -std=c++11 -pthread nome.cpp -o nome
+
+----------------------------------------------------------
+
+*Detalhes da implementação do código estarão comentados no código, explicando a execução e o racional por trás das soluções*
+
+----------------------------------------------------------
+
 A “troca” de informações é realizada através da comunicação inter processos (IPC). Para introduzir o conceito analisamos um dos problemas mais famosos na área de Sistemas Operacionais: o jantar dos filósofos.
 Cada filósofo possui um prato cheio de spaghetti à sua frente. 
 Além disso, um garfo é posicionado entre cada par adjacente de filósofos (portanto, cada filósofo tem exatamente um garfo à sua esquerda e exatamente um garfo à sua direita).
@@ -55,21 +76,6 @@ Assim ficariamos neste loop, onde o programa continua executando indevinidamente
 **Existe a possibilidade do programa não cair nesta situação, mas para a solução ideal do problema é necessário a utilização de mutex(), onde durante a execução das funções pegarGarfo e devolverGarfo() iriamos utilizar os semáforos binários para controlar o estado de cada garfo.
 Além do mutex() pode-se se utilizar da biblioteca semaphore() para implementação de semáforos binários.
 
-----------------------------------------------------------
+Existe ainda a possibilidade de fazer o controle de cada filosófo individualmente, utilizando multithread, fazemos o controle de estado de cada integrande da mesa individualmente
 
-Códigos finalizados:
-
-Filosofos2.c - VERSÃO DO CÓDIGO EM C, UTLIZANDO MULTITHREAD, SEMAPHORE E MUTEX
-
-COMPILAR NORMAL, SEM NECESSIDADE DE ARGUMENTOS EXTERNOS
-
-----------------------------------------------------------
-
-jantar4.cpp  - VERSÃO DO CÓDIGO EM C++, UTILIZANDO THREAD E MUTEX
-
-COMPILAR UTILIZANDO:
-g++ -std=c++11 -pthread nome.cpp -o nome
-
-----------------------------------------------------------
-
-*Detalhes da implementação do código estarão comentados no código, explicando a execução e o racional por trás das soluções*
+Com estás implementações somos capazes de vencer as condições declaras acima e propor a melhor solução possível para o projeto.
