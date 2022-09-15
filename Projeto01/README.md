@@ -53,8 +53,8 @@ CONTÉUDO DO VIDEO: https://www.youtube.com/watch?v=LhkDV3cECNY
 ######################--------------------------------######################
 
 
-*Ao implementar uma solução utilizando sleep() e/ou timeout para os filosófos decidirem se podem ou não pegar um garfo, ou se devem devolver ele a mesa caimos em um 
-problema de inanição, onde mesmo utilizando números aleatórios para os filosófos iniciarem a função pegaGarfo(), caso eles iniciem simultanemalmente e todos peguem um garfo o programa iria executar que todos devolvessem os garfos e assim ficariamos neste loop, onde o programa continua executando indevinidamente, mas sem progressão   real (starvation).*
+**Ao implementar uma solução utilizando sleep() e/ou timeout para os filosófos decidirem se podem ou não pegar um garfo, ou se devem devolver ele a mesa caimos em um 
+problema de inanição, onde mesmo utilizando números aleatórios para os filosófos iniciarem a função pegaGarfo(), caso eles iniciem simultanemalmente e todos peguem um garfo o programa iria executar que todos devolvessem os garfos e assim ficariamos neste loop, onde o programa continua executando indevinidamente, mas sem progressão   real (starvation).**
 
 Existe a possibilidade do programa não cair nesta situação, mas para a solução ideal do problema é necessário a utilização de mutex(), onde durante a execução da função pensando() se faz necessário um DOWN  MUTEX e após o filosófo trocar os garfos um UP MUTEX;
 Está solução funciona sem erros, mas ainda não é a versão mais otimizada, pois implementando desta com forma, com a utilização de um semáforo binário, somente um filosófo poderá comer por vez.
@@ -64,8 +64,12 @@ Detalhes da implementação do código estarão comentados no código, explicand
 
 Códigos finalizados:
 
+
 Filosofos2.c - VERSÃO DO CÓDIGO EM C, UTLIZANDO MULTITHREAD, SEMAPHORE E MUTEX
+
+
 jantar4.cpp  - VERSÃO DO CÓDIGO EM C++, UTILIZANDO THREAD E MUTEX
+
 
 ######################--------------------------------######################
 
