@@ -46,6 +46,8 @@ Existe a possibilidade do programa não cair nesta situação, mas para a soluç
 Está solução funciona sem erros, mas ainda não é a versão mais otimizada, pois implementando desta com forma, com a utilização de um semáforo binário, somente um filosófo poderá comer por vez.
 A versão mais otimizada possível é utilizando um arranjo de semafóros, onde controlamos o estado de cada filosófo de forma idenpendente, só o liberando para comer caso seus vizinhos estejam pensando(), sem garfos adjacentes ocupados.
 
+Detalhes da implementação do código estarão comentados no código, explicando a execução e o racional por trás das soluções
+
 ######################--------------------------------######################
 
 COMPILAR UTILIZANDO:
