@@ -72,6 +72,7 @@ Implemente uma possível solução para o problema do jantar dos filósofos?
 Explique, em cada trecho do seu programa, como é resolvido o problema da comunicação inter processos (IPC)?
 
 
+RESPOSTA:
 
 **Ao implementar uma solução onde o filósofo pega um garfo e aguarda até o próximo garfo estar disponível NÂO FUNCIONA. Se todos os filosófos resolverem pegar os garfos simultanemante o programa terá um deadlock, onde nenhum deles terá dois garfos e nenhum irá libera um garfo para o próximo, o problema apresenta condições de impasses.**
 
