@@ -25,7 +25,7 @@ sem_t S[N]; //Declarando Semáforo binário para reset de estado;
 
 // Função para determinar quem pode comer
 void mesa(int filosofos) {
-	if (garfo[filosofos] == com_Fome && garfo[ESQUERDA] != Comendo && garfo[DIREITA] != Comendo) { // Caso este critério não seja válido o filosósfo não inicar a comer;
+	if (garfo[filosofos] == com_Fome && garfo[ESQUERDA] != Comendo && garfo[DIREITA] != Comendo) { // Caso este critério não seja válido o filosósfo não inicia a comer;
 		
 		garfo[filosofos] = Comendo; // Mudança de estado do filósofo;
 		sleep(2);
