@@ -20,7 +20,7 @@ int vet[N] = { 0, 1, 2, 3, 4 };
 // Um será para para pegar o garfo (sem_wait) outro para devolver garfo(sem_post);
 
 sem_t mutex; //Declarando Semáforo binário para exclusão mútua;
-sem_t S[N]; //Declarando Semáforo binário para reset de estado;
+sem_t S[N]; //Declarando Semáforo binário para reset de status;
 
 
 // Função para determinar quem pode comer
