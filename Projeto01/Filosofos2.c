@@ -1,22 +1,26 @@
+/* http://www.di.ubi.pt/~operativos/praticos/html/13-sinc.html
+Utilizamos este site para nos guiar com utilização das bibliotecas semaphore e pthread
+O site também demostra uma solução para o problema, mas a implementação está diferente*/
+
 #include <stdio.h>
 #include <pthread.h>
 #include <semaphore.h>
 
-
-#define N 5
-#define Pensando 2
-#define com_Fome 1
-#define Comendo 0
-#define ESQUERDA (filosofos + 4) % N
-#define DIREITA (filosofos + 1) % N
+#define N 5 // Números de garfos
+#define Pensando 2 // Criando valores de controle
+#define com_Fome 1 // Criando valores de controle
+#define Comendo 0 // Criando valores de controle
+#define ESQUERDA (filosofos+4) % N // Garfos a esquerda
+#define DIREITA (filosofos+1) % N // Garfos a direita
 
 int garfo[N];
 int vet[N] = { 0, 1, 2, 3, 4 };
 
 // Aqui vamos utilizar dois semafóros com operações diferentes
 // Um será para para pegar o garfo (sem_wait) outro para devolver garfo(sem_post)
-sem_t mutex; //Declarando semafóro
-sem_t S[N]; //Declarando semafóro
+
+sem_t mutex; //Declarando semafóro binário para exclusão mútua
+sem_t S[N]; //Declarando semafóro binário para exclusão mútua
 
 void mesa(int filosofos) {
 	if (garfo[filosofos] == com_Fome && garfo[ESQUERDA] != Comendo && garfo[DIREITA] != Comendo) {
