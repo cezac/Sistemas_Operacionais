@@ -16,11 +16,15 @@ Explique, em cada trecho do seu programa, como é resolvido o problema da comuni
 MATERIAL DE ESTUDO UTILIZADO PARA RESOLUÇÃO
 
 Livro "Sistema Operacionais Modernos" 3°Edição:
+
 Página 50, capítulo de thread;
+
 Página 99 até 102 solução para o problema dos filósofos.
 
+
 http://www.di.ubi.pt/~operativos/praticos/html/13-sinc.html
-Material de apoio para entedimento das bibliotecas de semaphore e mutex.
+
+Material de apoio para entedimento das bibliotecas de semaphore emutex.
 
 ######################--------------------------------######################
 
