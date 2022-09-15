@@ -13,10 +13,10 @@
 int garfo[N];
 int vet[N] = { 0, 1, 2, 3, 4 };
 
-// Aqui vamos utilizar dois semafóros com operações diferentes
-// Um será para para pegar o garfo (sem_wait) outro para devolver garfo(sem_post)
-sem_t mutex; //Declarando semafóro
-sem_t S[N]; //Declarando semafóro
+// Aqui vamos utilizar dois semafÃ³ros com operaÃ§Ãµes diferentes
+// Um serÃ¡ para para pegar o garfo (sem_wait) outro para devolver garfo(sem_post)
+sem_t mutex; //Declarando semafÃ³ro
+sem_t S[N]; //Declarando semafÃ³ro
 
 void mesa(int filosofos) {
 	if (garfo[filosofos] == com_Fome && garfo[ESQUERDA] != Comendo && garfo[DIREITA] != Comendo) {
