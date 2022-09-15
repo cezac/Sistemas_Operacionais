@@ -1,14 +1,14 @@
 ----------------------------------------------------------
 
-Códigos finalizados:
+## Códigos finalizados:
 
-JantarFilosofosFinal.c - VERSÃO DO CÓDIGO EM C, UTLIZANDO MULTITHREAD, SEMAPHORE E MUTEX
+**JantarFilosofosFinal.c - VERSÃO DO CÓDIGO EM C, UTLIZANDO MULTITHREAD, SEMAPHORE E MUTEX**
 
 COMPILAR NORMAL, SEM NECESSIDADE DE ARGUMENTOS EXTERNOS
 
 ----------------------------------------------------------
 
-jantar_dos_filosofos_final.cpp  - VERSÃO DO CÓDIGO EM C++, UTILIZANDO THREAD E MUTEX
+**jantar_dos_filosofos_final.cpp  - VERSÃO DO CÓDIGO EM C++, UTILIZANDO THREAD E MUTEX**
 
 COMPILAR UTILIZANDO COMPILADOR G++ E EXECUTAR O SEGUINTE COMANDO NO TERMINAL:
 g++ -std=c++11 -pthread jantar_dos_filosofos_final.cpp
@@ -35,7 +35,7 @@ Explique, em cada trecho do seu programa, como é resolvido o problema da comuni
 
 ----------------------------------------------------------
 
-MATERIAL DE ESTUDO UTILIZADO PARA RESOLUÇÃO:
+### MATERIAL DE ESTUDO UTILIZADO PARA RESOLUÇÃO:
 
 Livro "Sistema Operacionais Modernos" 3°Edição:
 
