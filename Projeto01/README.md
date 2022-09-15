@@ -24,7 +24,7 @@ Página 99 até 102 solução para o problema dos filósofos.
 
 http://www.di.ubi.pt/~operativos/praticos/html/13-sinc.html
 
-Material de apoio para entedimento das bibliotecas de semaphore emutex.
+Material de apoio para entedimento das bibliotecas de semaphore e mutex.
 
 ######################--------------------------------######################
 
