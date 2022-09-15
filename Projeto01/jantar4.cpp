@@ -6,26 +6,26 @@
 using namespace std;
 
 #define N 5
-#define maxTempo 5
-#define minTempo 3
+#define maxTempo 13
+#define minTempo 5
 mutex garfos[5];
 mutex tentarPegarGarfo;
 
 void comer(int id);
 void pensar(int id);
-int pegarGarfo(int id);
+void pegarGarfo(int id);
 void soltarGarfo(int id);
 void filosofo(int id);
 
-int pegarGarfo(int id){
-    return try_lock(garfos[id], garfos[(id + 1) % N]);
+void pegarGarfo(int id){
+    tentarPegarGarfo.lock();
+    lock(garfos[id], garfos[(id + 1) % N]);
+    tentarPegarGarfo.unlock();
 }
 
 void soltarGarfo(int id){
-    tentarPegarGarfo.lock();
     garfos[id].unlock();
     garfos[(id + 1) % N].unlock();
-    tentarPegarGarfo.unlock();
 }
 
 void comer(int id){
@@ -47,14 +47,13 @@ void filosofo(int id){
 
     pensar(id);
     while (1) {
-      if (pegarGarfo(id) == -1){
+        pegarGarfo(id);
         comer(id);
         vzsComeu++;
         soltarGarfo(id);
-      }
-      pensar(id);
-      vzsPensou++;
-      printf("\n\nO filosofo %d pensou %d vezes e comeu %d vezes\n", id, vzsPensou, vzsComeu);
+        pensar(id);
+        vzsPensou++;
+        printf("\n\nO filosofo %d pensou %d vezes e comeu %d vezes", id, vzsPensou, vzsComeu);
     }
 }
 
