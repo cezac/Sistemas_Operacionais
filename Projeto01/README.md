@@ -19,6 +19,9 @@ Livro "Sistema Operacionais Modernos" 3°Edição:
 Página 50, capítulo de thread;
 Página 99 até 102 solução para o problema dos filósofos.
 
+http://www.di.ubi.pt/~operativos/praticos/html/13-sinc.html
+Material de apoio para entedimento das bibliotecas de semaphore e mutex.
+
 ######################--------------------------------######################
 
 Ao implementar uma solução onde o filósofo pega um garfo e aguarda até o próximo garfo estar disponível NÂO FUNCIONA. Se todos os filosófos resolverem pegar os garfos simultanemante o programa terá um deadlock, onde nenhum deles terá dois garfos e nenhum irá libera um garfo para o próximo, o problema apresenta condições de impasses:
