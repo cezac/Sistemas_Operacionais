@@ -1,1 +1,49 @@
-Projeto 02
+Documentação
+Na raiz do Projeto no repositório devem possuir um arquivo README que contenha as instruções
+detalhadas para a execução do problema. Na construção da documentação devem ser
+disponibilizadas as seguintes questões:
+• Como compilar o programa na plataforma disponibilizada;
+• Como executar o programa;
+• Como comprovar que os resultados propostos foram alcançados.
+
+Avaliação
+No dia da entrega será realizada uma avaliação individual dos trabalhos pelo professor com os
+grupos, onde a execução do programa com sucesso é um requisito para a avaliação. Caso o
+programa não seja capaz de cumprir o objetivo proposto, o grupo deve justificar os motivos da
+falha e explicar, mostrando o código-fonte, o quão perto conseguiram chegar da solução.
+
+
+Entrega
+O grupo deverá submeter o link para o repositório do projeto na tarefa do Moodle aberta para o
+tema. Deverão constar:
+• Link público para o repositório;
+• Nome dos componentes do grupo.
+Observações de ordem geral:
+• Os prazos para entrega não serão estendidos, então fiquem atentos às datas;
+• Apesar de não haver restrição de linguagem, toda escolha tecnológica deve ser justificada
+durante o desenvolvimento do trabalho;
+• Durante a apresentação cada grupo deve identificar a contribuição individual de cada
+componente no desenvolvimento do trabalho;
+• Caso não seja possível identificar qual foi a contribuição individual de cada aluno, todos
+terão a nota 0 (zero) atribuída ao trabalho;
+• Após a apresentação será disponibilizado um espaço de 15min para perguntas do professor
+e dos colegas.
+
+
+O trecho de código tem como objetivo zerar o saldo de uma conta (from) através de várias
+transferências para a outra (to). Contudo, acontece uma falha em sua execução causada por um dos
+problemas relativos à concorrência apresentados em sala. Para que o código seja executado com
+sucesso, é necessário identificar o problema e apresentar uma solução, com base nas observações
+relativas aos problemas e suas soluções discutidos em sala.
+
+Considere os seguintes requisitos para o problema acima:
+
+1. A conta to pode receber mais de uma transferência simultânea;
+2. A conta from pode enviar mais de uma transferência simultânea;
+3. A conta from não pode enviar dinheiro se não tiver mais saldo;
+4. A conta to pode trocar de ordem com a conta from, ou seja, a conta que enviava pode
+receber e a conta que recebia pode enviar;
+5. Poderão ser realizadas até 100 transações simultâneas de transferência.
+
+PROJETO: Utilizando o exemplo e os conceitos apresentados em sala, implemente uma solução
+para a condição de corrida apresentada no problema.
