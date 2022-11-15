@@ -1,0 +1,8 @@
+# ninja log v5
+4	357	6902588339583032	CMakeFiles/Projeto.dir/Banco.cpp.obj	c5ab0b4a0aba20da
+358	544	6902588341444860	Projeto.exe	ecc01f09cc1e63d6
+1	178	6902590508559044	build.ninja	a2c74e579d311fca
+3	360	6902590565764710	CMakeFiles/Projeto.dir/Banco.cpp.obj	a40613c0e24ace56
+361	527	6902590567412092	Projeto.exe	ecc01f09cc1e63d6
+3	367	6902590714623067	CMakeFiles/Projeto.dir/Banco.cpp.obj	a40613c0e24ace56
+368	536	6902590716294266	Projeto.exe	ecc01f09cc1e63d6
