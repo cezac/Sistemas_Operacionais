@@ -12,7 +12,6 @@ grupos, onde a execução do programa com sucesso é um requisito para a avalia�
 programa não seja capaz de cumprir o objetivo proposto, o grupo deve justificar os motivos da
 falha e explicar, mostrando o código-fonte, o quão perto conseguiram chegar da solução.
 
-
 Entrega
 O grupo deverá submeter o link para o repositório do projeto na tarefa do Moodle aberta para o
 tema. Deverão constar:
@@ -28,27 +27,15 @@ componente no desenvolvimento do trabalho;
 terão a nota 0 (zero) atribuída ao trabalho;
 • Após a apresentação será disponibilizado um espaço de 15min para perguntas do professor
 e dos colegas.
+-----------------------------------------------------------------------------------------------------
 
-
-O trecho de código tem como objetivo zerar o saldo de uma conta (from) através de várias
-transferências para a outra (to). Contudo, acontece uma falha em sua execução causada por um dos
-problemas relativos à concorrência apresentados em sala. Para que o código seja executado com
-sucesso, é necessário identificar o problema e apresentar uma solução, com base nas observações
-relativas aos problemas e suas soluções discutidos em sala.
-
-Considere os seguintes requisitos para o problema acima:
-
-1. A conta to pode receber mais de uma transferência simultânea;
-2. A conta from pode enviar mais de uma transferência simultânea;
-3. A conta from não pode enviar dinheiro se não tiver mais saldo;
-4. A conta to pode trocar de ordem com a conta from, ou seja, a conta que enviava pode
-receber e a conta que recebia pode enviar;
-5. Poderão ser realizadas até 100 transações simultâneas de transferência.
-
-PROJETO: Utilizando o exemplo e os conceitos apresentados em sala, implemente uma solução
-para a condição de corrida apresentada no problema.
-
+RESPOSTA PARA SOLUÇÃO DO PROBLEMA:
+Todos os crítérios acima foram obedecidos, só é necessário alterar a função transferência caso queira alterar a ordem das contas.
+Fica comprovado no código que todo o dinheiro de uma conta foi passado para outra, dentro das 100 execuções limites.
+Cada execução exibi o valor armazenado nas contas e conseguimos comprovar as retiradas e saídas.
+Cada chamada da função, de índice I, é armazenado num vetor de threds.
+Dentro da função transferencia, o mutex global, tem a responsabilidade de travar a execução das threads até que uma transação esteja completa.
 -----------------------------------------------------------------------------------------------------
 
 DEVE COMPILAR O PROGRAMA UTILIZANDO OS SEGUINTES COMANDO:
-  g++ -pthread -o programa
+  g++ -pthread -o "programa"
