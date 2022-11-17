@@ -3,70 +3,69 @@
 //
 
 #include "Banco.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "malloc.h"
-#include "sys/types.h"
-#include "signal.h"
-#include "sched.h"
 #include <iostream>
+#include "mutex"
+#include "thread"
 
+std::mutex semaforo; // Criando um mutex
 
 // Funcao para trasnferir o dinheiro de uma conta a outra
-int transferencia(int quant, int quantTransfer){
-    conta clienteA; // Criando a contaA
-    conta clienteB; // Criando a contaB
+int transferencia(int quantTransfer, conta* clienteA, conta* clienteB){
 
-    clienteA.saldo = 1000; // Definindo saldo padrao
-    clienteB.saldo = 0; // Definindo saldo padrao
-    clienteA.tentativas = 0; // Definindo o n° de tentativas padrao
-    clienteB.tentativas = 0; // Definindo o n° de tentativas padrao
+    clienteA->tentativas = 0; // Definindo o n° de tentativas padrao
+    clienteB->tentativas = 0; // Definindo o n° de tentativas padrao
 
-    for (int i =0; i<quantTransfer; i++){
+    semaforo.lock(); // Mutex travado enquanto a funcao executa transacao
 
-        if(clienteA.saldo >=quant){ // Se o saldo do clienteA for igual ou maior ao valor da transferencia
+    if(clienteA->saldo >=quantTransfer){ // Se o saldo do clienteA for igual ou maior ao valor da transferencia
 
-            std::cout << std::endl << "Transferencia Concluida com Sucesso" << std::endl;
+        std::cout << std::endl << "Transferencia Concluida com Sucesso" << std::endl;
 
-            clienteA.saldo -= quant;
-            clienteA.tentativas +=1;
-            std::cout << "Saldo da conta A = " << clienteA.saldo << std::endl;
-            std::cout << "Transferencias Executadas na conta A = " << clienteA.tentativas << std::endl << std::endl;
+        clienteA->saldo -= quantTransfer;
+        clienteA->tentativas +=1;
+        std::cout << "Saldo da conta A = " << clienteA->saldo << std::endl;
+        std::cout << "Transferencias Executadas na conta A = " << clienteA->tentativas << std::endl << std::endl;
 
-            clienteB.saldo +=quant;
-            clienteB.tentativas +=1;
-            std::cout << "Saldo da conta B = " << clienteB.saldo << std::endl;
-            std::cout << "Transferencias Executadas na conta B = " << clienteB.tentativas << std::endl << std::endl;
-        }
-        else { // Se o saldo do clienteA for infeiror ao valor
-            std::cout << std::endl << " ERRO DE TRANSFENCIA: ";
-            std::cout << std::endl << " Falta de Saldo " << std::endl;
-        }
+        clienteB->saldo +=quantTransfer;
+        clienteB->tentativas +=1;
+        std::cout << "Saldo da conta B = " << clienteB->saldo << std::endl;
+        std::cout << "Transferencias Executadas na conta B = " << clienteB->tentativas << std::endl << std::endl;
+        semaforo.unlock(); // Transacao finalizada, mutex desbloqueado
     }
-
+    else { // Se o saldo do clienteA for inferior ao valor
+        std::cout << std::endl << " ERRO DE TRANSFENCIA: ";
+        std::cout << std::endl << " Falta de Saldo " << std::endl;
+        semaforo.unlock(); // Transacao finalizada, mutex desbloqueado
+    }
     return 0;
+
 }
 
 int main() {
 
-    conta clienteA, clienteB;
+    int valorTransacao = 10; // Valor a ser debitado nas transacoes
 
-    pid_t thread;
-    int i;
-    int valorTransacao;
+    conta primaria; // cria uma conta
+    conta secundaria; // cria uma conta
 
-    valorTransacao += 100;
+    primaria.saldo = 1000; // define o saldo da conta primaria
+    secundaria.saldo = 0; // define o saldo da conta secundaria
 
-    size_t s = 0;
-    int* pilha = (int*) malloc(s);
+    std::thread vec[100]; // cria um array de threads
 
-    if (pilha == 0 ){
-        std::cout << "Malloc nao conseguiu criar a pilha" << std::endl;
-        exit(1);
+    for (int i = 0; i < 100; i++)
+    {
+        // Cada execucao deste laco incrementa a posicao i do vetor de threads com a execucao da funcao transferencia
+        vec[i] = std::thread(transferencia, valorTransacao, &primaria, &secundaria); 
     }
 
-    transferencia(valorTransacao, 3);
+    for (int i = 0; i < 100; i++)
+    {
+        // Cada chamada executada no laco interior deve aguardar a execucao da thread anterior para iniciar a próxima
+        vec[i].join();
+    }
 
-    return 0;
+    std::cout << std::endl << "Saldo da Primeira Conta: " << primaria.saldo;
+    std::cout << std::endl << "Saldo da Segunda Conta: " << secundaria.saldo << std::endl;
 
 }
