@@ -36,7 +36,7 @@ Cada execução exibi o valor armazenado nas contas e conseguimos comprovar as r
 
 Cada chamada da função, de índice I, é armazenado num vetor de threds.
 Dentro da função transferencia, o mutex global, tem a responsabilidade de travar uma área critica do código, até que a execução do código seja finalizada.
-Além do mutex utilizamos a função join(), da biblioteca thread, para determinar que a próxima thread só pode ser executada se a última thread estiver finalizado.
+Além do mutex utilizamos a função join(), da biblioteca thread, para determinar que a próxima thread só possa ser executada se a última thread estiver finalizado.
 -----------------------------------------------------------------------------------------------------
 
 DEVE COMPILAR O PROGRAMA UTILIZANDO OS SEGUINTES COMANDO:
