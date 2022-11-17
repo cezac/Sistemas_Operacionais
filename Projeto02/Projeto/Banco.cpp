@@ -12,9 +12,6 @@ std::mutex semaforo; // Criando um mutex
 // Funcao para trasnferir o dinheiro de uma conta a outra
 int transferencia(int quantTransfer, conta* clienteA, conta* clienteB){
 
-    clienteA->tentativas = 0; // Definindo o n° de tentativas padrao
-    clienteB->tentativas = 0; // Definindo o n° de tentativas padrao
-
     semaforo.lock(); // Mutex travado enquanto a funcao executa transacao
 
     if(clienteA->saldo >=quantTransfer){ // Se o saldo do clienteA for igual ou maior ao valor da transferencia
@@ -30,38 +27,40 @@ int transferencia(int quantTransfer, conta* clienteA, conta* clienteB){
         clienteB->tentativas +=1;
         std::cout << "Saldo da conta B = " << clienteB->saldo << std::endl;
         std::cout << "Transferencias Executadas na conta B = " << clienteB->tentativas << std::endl << std::endl;
-        semaforo.unlock(); // Transacao finalizada, mutex desbloqueado
+        semaforo.unlock();
     }
     else { // Se o saldo do clienteA for inferior ao valor
         std::cout << std::endl << " ERRO DE TRANSFENCIA: ";
         std::cout << std::endl << " Falta de Saldo " << std::endl;
-        semaforo.unlock(); // Transacao finalizada, mutex desbloqueado
+        semaforo.unlock();
     }
     return 0;
 
 }
 
+
 int main() {
 
-    int valorTransacao = 10; // Valor a ser debitado nas transacoes
+    int valorTransacao = 10;
 
-    conta primaria; // cria uma conta
-    conta secundaria; // cria uma conta
+    conta primaria;
+    conta secundaria;
 
-    primaria.saldo = 1000; // define o saldo da conta primaria
-    secundaria.saldo = 0; // define o saldo da conta secundaria
+    primaria.saldo = 1000;
+    secundaria.saldo = 0;
 
-    std::thread vec[100]; // cria um array de threads
+    primaria.tentativas = 0;
+    secundaria.tentativas = 0;
+
+    std::thread vec[100];
 
     for (int i = 0; i < 100; i++)
     {
-        // Cada execucao deste laco incrementa a posicao i do vetor de threads com a execucao da funcao transferencia
-        vec[i] = std::thread(transferencia, valorTransacao, &primaria, &secundaria); 
+        vec[i] = std::thread(transferencia, valorTransacao, &primaria, &secundaria);
     }
 
     for (int i = 0; i < 100; i++)
     {
-        // Cada chamada executada no laco interior deve aguardar a execucao da thread anterior para iniciar a próxima
         vec[i].join();
     }
 
