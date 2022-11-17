@@ -47,3 +47,8 @@ receber e a conta que recebia pode enviar;
 
 PROJETO: Utilizando o exemplo e os conceitos apresentados em sala, implemente uma solução
 para a condição de corrida apresentada no problema.
+
+-----------------------------------------------------------------------------------------------------
+
+DEVE COMPILAR O PROGRAMA UTILIZANDO OS SEGUINTES COMANDO:
+  g++ -pthread -o programa
