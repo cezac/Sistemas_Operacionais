@@ -33,8 +33,10 @@ RESPOSTA PARA SOLUÇÃO DO PROBLEMA:
 Todos os crítérios acima foram obedecidos, só é necessário alterar a função transferência caso queira alterar a ordem das contas.
 Fica comprovado no código que todo o dinheiro de uma conta foi passado para outra, dentro das 100 execuções limites.
 Cada execução exibi o valor armazenado nas contas e conseguimos comprovar as retiradas e saídas.
+
 Cada chamada da função, de índice I, é armazenado num vetor de threds.
-Dentro da função transferencia, o mutex global, tem a responsabilidade de travar a execução das threads até que uma transação esteja completa.
+Dentro da função transferencia, o mutex global, tem a responsabilidade de travar uma área critica do código, onde somente uma thread pode ser executada por vez, 
+até que uma transação esteja completa.
 -----------------------------------------------------------------------------------------------------
 
 DEVE COMPILAR O PROGRAMA UTILIZANDO OS SEGUINTES COMANDO:
