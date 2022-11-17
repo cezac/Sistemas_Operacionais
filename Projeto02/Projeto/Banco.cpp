@@ -4,8 +4,8 @@
 
 #include "Banco.h"
 #include <iostream>
-#include "mutex"
-#include "thread"
+#include <mutex>
+#include <thread>
 
 std::mutex semaforo; // Criando um mutex
 
